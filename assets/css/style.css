@@ -527,6 +527,7 @@ body.nav-active { overflow: hidden; }
   transition: var(--cubic-ease-out);
 }
 
+
 .portfolio-card .img-cover { transition: var(--cubic-ease-out); }
 
 .portfolio-card .card-content {
