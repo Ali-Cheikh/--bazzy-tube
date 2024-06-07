@@ -559,9 +559,11 @@ body.nav-active { overflow: hidden; }
   gap: 60px;
 }
 
+
 .blog-card {
   display: grid;
   gap: 40px;
+  color: #60c0e0;
 }
 
 .blog-card .card-content {
