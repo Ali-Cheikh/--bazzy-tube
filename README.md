@@ -1,6 +1,6 @@
 # Mohamed Amine Ben Taher - Video Creator
 
-Hi, I'm Mohamed Amine Ben Taher, a creative Video Creator who dreams of making the world laugh by creating captivating funny videos.
+Hi, I'm Bazzy-Tube, a creative Video Creator who dreams of making the world laugh by creating captivating funny videos.
 
 ## About Me
 
