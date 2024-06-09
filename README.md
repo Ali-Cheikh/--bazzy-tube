@@ -10,7 +10,6 @@ I'm passionate about video production, storytelling, and bringing joy to people 
 
 - **Funny Skits**: Check out my hilarious skits on YouTube where I parody everyday situations.
 - **Vlogs**: Follow my adventures and behind-the-scenes moments on Instagram.
-- **Animations**: I create quirky animations using After Effects and Blender.
 
 ---
 
