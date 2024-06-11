@@ -400,7 +400,12 @@ body.nav-active { overflow: hidden; }
   text-align: center;
 }
 
-@keyframes jiggle {
+.ali:hover {
+  transform: scale(1.2) rotate(-10deg);
+  cursor: pointer;
+}
+
+/* @keyframes jiggle {
   0% {
     -webkit-transform: rotate(-1.5deg);
   }
@@ -416,8 +421,7 @@ body.nav-active { overflow: hidden; }
   animation-name: jiggle;
   animation-iteration-count: infinite;
   transform: rotate(-10deg) scale(1.1);
-}
-
+} */
 
 .hero { padding-block-start: 110px; }
 
