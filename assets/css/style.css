@@ -400,9 +400,22 @@ body.nav-active { overflow: hidden; }
   text-align: center;
 }
 
+@keyframes jiggle {
+  0% {
+    -webkit-transform: rotate(-1.5deg);
+  }
+  50% {
+    -webkit-transform: rotate(2.5deg);
+  }
+}
+
 .ali:hover {
-  transform: scale(1.1) rotate(-10deg);
   cursor: pointer;
+  animation: jiggle 0.2s infinite;
+  animation-duration: 0.2s;
+  animation-name: jiggle;
+  animation-iteration-count: infinite;
+  transform: rotate(-10deg) scale(1.1);
 }
 
 
