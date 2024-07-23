@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="assets/css/stylee.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <img src="images/Screenshot 2024-07-21 235332.png" alt="Event Title">
+    <div class="background">
+        <div class="screen">
+            <div class="screen-header">
+                <div class="screen-header-left">
+                    <div class="screen-header-button close"></div>
+                    <div class="screen-header-button maximize"></div>
+                    <div class="screen-header-button minimize"></div>
+                </div>
+                <a href="index.html">
+                <div class="screen-header-right">
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                </div>
+                </a>
+            </div>
+            <div class="screen-body">
+                <div class="screen-body-item left">
+                    <h2 class="app-title">Registration Form</h2>
+                    <form id="registration-form">
+                        <div class="app-form-group">
+                            <input type="text" class="app-form-control" name="name" placeholder="Name" id="name" required>
+                        </div>
+                        <div class="app-form-group">
+                            <input type="number" class="app-form-control" name="age" placeholder="Age (16-20 or 20+)" id="age" required pattern="16-20">
+                        </div>
+                        <div class="app-form-group">
+                            <input type="tel" class="app-form-control" name="phone" placeholder="Phone Number" id="phone" required>
+                        </div>
+                        <div class="app-form-group">
+                            <select class="app-form-control" id="payment-method" name="payment-method" required>
+                                <option value="" disabled selected>Select Payment Method</option>
+                                <option value="credit-card">Credit Card</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="bank-transfer">Bank Transfer</option>
+                                <option value="cryptocurrency">Cryptocurrency</option>
+                            </select>
+                        </div>
+                        <div class="app-form-buttons">
+                            <button type="submit" class="app-form-button" onclick="generateTicket()">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="screen-body-item">
+                    <div id="ticket-container" class="hidden">
+                        <div id="ticket">
+                            <img src="images/Screenshot 2024-07-21 235332.png" alt="Event Title">
+                            <div id="qr-code"></div>
+                            <div id="ticket-info">
+                                <h1 style="color:white;" class="text-lg">Holder:</h1>
+                                <div id="ticket-name" ></div>
+                            </div>
+                        </div><br>
+                        <button class="btn-primary text-bg-warning text-yellow-200 text-lg" onclick="downloadTicket()">Download Ticket</button>
+                        <hr>
+                        <h4 class="text-green-200">Make sure to have the ticket on your phone the day of the event</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function generateTicket() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const qrCodeContainer = document.getElementById('qr-code');
+            const ticketName = document.getElementById('ticket-name');
+            const ticketContainer = document.getElementById('ticket-container');
+
+            // Create a canvas element for the QR code
+            const canvas = document.createElement('canvas');
+            qrCodeContainer.innerHTML = ''; // Clear previous content
+            qrCodeContainer.appendChild(canvas); // Append canvas to qr-code container
+
+            // Generate QR code
+            QRCode.toCanvas(canvas, `Name: ${name}, Phone: ${phone}, Age: ${age}`, { width: 200 }, function (error) {
+                if (error) {
+                    console.error('QR Code Generation Error:', error);
+                    return;
+                }
+                console.log('QR code generated successfully!');
+            });
+
+            // Display ticket name
+            ticketName.innerHTML = `<span class="text-red-600 text-lg font-bold"><br>${name}</span>`;
+
+            // Show ticket container
+            ticketContainer.classList.remove('hidden');
+        }
+
+        function downloadTicket() {
+            html2canvas(document.getElementById('ticket')).then(function (canvas) {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'ticket.png';
+                link.click();
+            });
+        }
+    </script>
+            <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyOzQHOJkijYn81sQOql0md9bSHOvwLWwcgh-UJQRe2kT8fzBWSUc0uPDQa_0gbOwfw/exec';
+
+        $(document).ready(function () {
+            $('.app-form').on('submit', function (e) {
+                e.preventDefault();
+
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Please wait...',
+                    text: 'Sending your message',
+                    willOpen: () => {
+                        Swal.showLoading();
+                    },
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    background: "hsla(231, 10%, 14%, 1)"
+                });
+
+                const formData = new FormData(this);
+
+                $.ajax({
+                    url: scriptURL,
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        console.log("Response from Google Sheets:", data);
+
+                        if (data.result === 'success') {
+                            Swal.fire({
+                                imageUrl: "assets/images/logo.png",
+                                imageAlt: "Custom Success Icon",
+                                title: 'Success!',
+                                text: `Your Registration is complete download the code.<br> Download your Ticket `,
+                                width: 600,
+                                padding: "3em",
+                                timer: 5000,
+                                timerProgressBar: true,
+                                showConfirmButton: false,
+                                allowOutsideClick: false,
+                                color: "red",
+                                background: "#262626",
+                                backdrop: "rgba(0,0,0,0.4)",
+                            })
+                        } else {
+                            console.error('Error:', data.error);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: "Something went wrong! Please try again later. don't get the ticket yet",
+                            });
+                        }
+                    },
+                    error: function (error) {
+                        console.error('Error!', error);
+                        Swal.fire({
+                                imageUrl: "assets/images/logo.png",
+                                imageAlt: "Custom Success Icon",
+                                title: 'registration not sent try again',
+                                text: 'Fuck we are out of weed get more weed gorge.',
+                                width: 600,
+                                padding: "3em",
+                                timer: 5000,
+                                timerProgressBar: true,
+                                showConfirmButton: false,
+                                allowOutsideClick: false,
+                                color: "#fff",
+                                background: "#262626",
+                                backdrop: "rgba(0,0,0,0.4)",
+                            })
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</body>
+</html>
