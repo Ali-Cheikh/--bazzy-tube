@@ -91,6 +91,7 @@ body, button, input {
 }
 
 .background {
+    margin-top: -30%;
     display: flex;
     min-height: 100vh;
     align-items: center;
@@ -277,6 +278,20 @@ body, button, input {
     width: 20px;
     height: 20px;
     margin: 0 5px;
+}
+
+@media screen and (max-width: 620px) {
+    #img{
+        display: none;
+    }
+    .background{
+        margin-top: 10%;
+    }
+}
+@media screen and (min-width: 620px) {
+    #phonee{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 520px) {
