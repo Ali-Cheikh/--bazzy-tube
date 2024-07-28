@@ -54,7 +54,7 @@
                             <input type="text" class="app-form-control" name="name" placeholder="Name" id="name" required>
                         </div>
                         <div class="app-form-group">
-                            <input type="number" class="app-form-control" name="age" placeholder="Age (16-20 or 20+)" id="age" required pattern="16-20">
+                            <input type="number" class="app-form-control" name="age" placeholder="Age (16-20 or 20+)" id="age" required pattern="^(16|17|18|19|20|[2-9][0-9]+)$">
                         </div>
                         <div class="app-form-group">
                             <input type="tel" class="app-form-control" name="phone" placeholder="Phone Number" id="phone" required>
@@ -95,7 +95,38 @@
         </div>
     </div>
 
-    <script>
+            <script>
+        document.getElementById('age').addEventListener('input', function() {
+            var age = parseInt(this.value);
+            if (age < 16) {
+                Swal.fire({
+                    imageUrl: "assets/images/logo.png",
+                    imageAlt: "Custom Warning Icon",
+                    title: 'Requires Parent Permission!',
+                    text: `You are under 16 years old. Are you sure you want to proceed?`,
+                    width: 600,
+                    padding: "3em",
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, Proceed',
+                    cancelButtonText: 'No, Cancel',
+                    allowOutsideClick: false,
+                    color: "white",
+                    background: "#262626",
+                    backdrop: "rgba(0,0,0,0.4)",
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        // Allow the form to be submitted
+                        const age = document.getElementById('age').value;
+                    } else {
+                        // Reload the page
+                        location.reload();
+                    }
+                });
+            }
+        });
+
+        // Remove duplicate code in fetch error handling
         document.getElementById('registration-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -148,25 +179,16 @@
                         title: 'Oops...',
                         text: "Something went wrong! Please try again later.",
                     });
+                    generateTicket(name, age, phone);
                 }
             })
             .catch(error => {
                 console.error('Error!', error);
                 Swal.fire({
-                        imageUrl: "assets/images/logo.png",
-                        imageAlt: "Custom Success Icon",
-                        title: 'Success!',
-                        text: `Your Registration is complete download the code Download your Ticket `,
-                        width: 600,
-                        padding: "3em",
-                        timer: 5000,
-                        timerProgressBar: true,
-                        showConfirmButton: false,
-                        allowOutsideClick: false,
-                        color: "white",
-                        background: "#262626",
-                        backdrop: "rgba(0,0,0,0.4)",
-                    });
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "Something went wrong! Please try again later.",
+                });
                 generateTicket(name, age, phone);
             });
         });
