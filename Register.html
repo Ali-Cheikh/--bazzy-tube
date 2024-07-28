@@ -95,36 +95,35 @@
         </div>
     </div>
 
-            <script>
-        document.getElementById('age').addEventListener('input', function() {
-            var age = parseInt(this.value);
-            if (age < 16) {
-                Swal.fire({
-                    imageUrl: "assets/images/logo.png",
-                    imageAlt: "Custom Warning Icon",
-                    title: 'Requires Parent Permission!',
-                    text: `You are under 16 years old. Are you sure you want to proceed?`,
-                    width: 600,
-                    padding: "3em",
-                    showCancelButton: true,
-                    confirmButtonText: 'Yes, Proceed',
-                    cancelButtonText: 'No, Cancel',
-                    allowOutsideClick: false,
-                    color: "white",
-                    background: "#262626",
-                    backdrop: "rgba(0,0,0,0.4)",
-                })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                        // Allow the form to be submitted
-                        const age = document.getElementById('age').value;
-                    } else {
-                        // Reload the page
-                        location.reload();
-                    }
-                });
-            }
-        });
+    <script>
+        document.getElementById('age').addEventListener('blur', function() {
+        var age = parseInt(this.value);
+        if (!isNaN(age) && age < 16) {
+            Swal.fire({
+                imageUrl: "assets/images/logo.png",
+                imageAlt: "Custom Warning Icon",
+                title: 'Requires Parent Permission!',
+                text: `You are under 16 years old. Are you sure you want to proceed?`,
+                width: 600,
+                padding: "3em",
+                showCancelButton: true,
+                confirmButtonText: 'Yes, Proceed',
+                cancelButtonText: 'No, Cancel',
+                allowOutsideClick: false,
+                color: "white",
+                background: "#262626",
+                backdrop: "rgba(0,0,0,0.4)",
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    // Allow the form to be submitted
+                } else {
+                    // Reload the page
+                    location.reload();
+                }
+            });
+        }
+    });
 
         // Remove duplicate code in fetch error handling
         document.getElementById('registration-form').addEventListener('submit', function(e) {
