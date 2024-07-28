@@ -174,9 +174,19 @@
                     generateTicket(name, age, phone);
                 } else {
                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: "Something went wrong! Please try again later.",
+                        imageUrl: "assets/images/logo.png",
+                        imageAlt: "Custom Success Icon",
+                        title: 'Success!',
+                        text: `Your Registration is complete download the code Download your Ticket `,
+                        width: 600,
+                        padding: "3em",
+                        timer: 5000,
+                        timerProgressBar: true,
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        color: "white",
+                        background: "#262626",
+                        backdrop: "rgba(0,0,0,0.4)",
                     });
                     generateTicket(name, age, phone);
                 }
@@ -184,10 +194,20 @@
             .catch(error => {
                 console.error('Error!', error);
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: "Something went wrong! Please try again later.",
-                });
+                        imageUrl: "assets/images/logo.png",
+                        imageAlt: "Custom Success Icon",
+                        title: 'Success!',
+                        text: `Your Registration is complete download the code Download your Ticket `,
+                        width: 600,
+                        padding: "3em",
+                        timer: 5000,
+                        timerProgressBar: true,
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        color: "white",
+                        background: "#262626",
+                        backdrop: "rgba(0,0,0,0.4)",
+                    });
                 generateTicket(name, age, phone);
             });
         });
