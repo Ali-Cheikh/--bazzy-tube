@@ -366,3 +366,8 @@ body, button, input {
         font-size: 30px;
     }
 }
+.btn-primary.bg-yellow-400.text-black-10:hover{
+    background-color: yellow;
+    /*scale on hover*/
+    transform: scale(1.1);
+}
