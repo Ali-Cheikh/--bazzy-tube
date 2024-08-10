@@ -281,7 +281,7 @@ body, button, input {
 @media screen and (max-width: 520px) {
     .screen-body {
         flex-direction: column;
-        padding: 20px; /* Add padding for mobile screens */
+        padding: -2% !important; /* Add padding for mobile screens */
     }
 
     .screen-body-item.left {
