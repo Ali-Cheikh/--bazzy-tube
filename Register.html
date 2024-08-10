@@ -40,6 +40,12 @@
 
 <body>
     <img id="phonee" src="images/Screenshot 2024-07-21 235332.png" alt="Event Title">
+    <div id="timer" class="boddy">
+        <div class="diiv" id="days"></div>
+        <div class="diiv" id="hours"></div>
+        <div class="diiv" id="minutes"></div>
+        <div class="diiv" id="seconds"></div>
+    </div>
     <div class="background">
         <div class="screen">
             <a href="index.html" target="Back To Main">
@@ -242,7 +248,7 @@ function generateTicket(name, age, phone) {
     });
 
     // Display ticket name
-    ticketName.innerHTML = `<span class="text-green-200 text-lg font-bold"><br>${name}</span>`;
+    ticketName.innerHTML = `<span class='spaan' class="text-green-200 text-lg font-bold"><br>${name}</span>`;
 
     // Show ticket container
     ticketContainer.classList.remove('hidden');
@@ -256,6 +262,36 @@ function downloadTicket() {
         link.click();
     });
 }
+    </script>
+    <script>
+        
+function makeTimer() {
+
+var endTime = new Date("August 19, 2024 18:00:00 PDT");
+var endTime = (Date.parse(endTime)) / 1000;
+
+var now = new Date();
+var now = (Date.parse(now) / 1000);
+
+var timeLeft = endTime - now;
+
+var days = Math.floor(timeLeft / 86400); 
+var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+if (hours < "10") { hours = "0" + hours; }
+if (minutes < "10") { minutes = "0" + minutes; }
+if (seconds < "10") { seconds = "0" + seconds; }
+
+$("#days").html(days + "<span class='spaan' >Days</span>");
+$("#hours").html(hours + "<span class='spaan'>Hours</span>");
+$("#minutes").html(minutes + "<span class='spaan'>Minutes</span>");
+$("#seconds").html(seconds + "<span class='spaan'>Seconds</span>");   
+
+}
+
+setInterval(function() { makeTimer(); }, 1000);
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>
