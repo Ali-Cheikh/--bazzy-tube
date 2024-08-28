@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Colorful Buttons</title>
+    <style>
+        body {
+            background-color: #3b3b3b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            background: #00ff00;
+            border-radius: 11px;
+            padding: 20px 45px;
+            color: #ffffff;
+            display: inline-block;
+            font: normal bold 42px/1 "Komika", cursive;
+            text-align: center;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #red-button {
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+        <button id="red-button">fall</button>
+        <button id="green-button">rise</button>
+    </div>
+    <script>
+        const redButton = document.getElementById('red-button');
+        const greenButton = document.getElementById('green-button');
+        const body = document.body;
+
+        redButton.addEventListener('click', () => {
+            body.style.backgroundColor = '#ff0000';
+        });
+
+        greenButton.addEventListener('click', () => {
+            body.style.backgroundColor = '#00ff00';
+        });
+
+    </script>
+</body>
+
+</html>
