@@ -1,0 +1,4 @@
+
+User-agent: *
+Disallow: /images/
+Sitemap: https://bazzy.onrender.com/sitemap.xml
