@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Name - Stay Tuned</title>
+  <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Custom CSS (optional) -->
+  <!-- Favicon (add later) -->
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-900">
+  <!-- Navbar with improved styling -->
+  <nav class="bg-black/95 backdrop-blur-sm text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-centerd">
+      <a href="index.html" class="text-2xl font-bold hover:text-yellow-400 transition-all duration-300">EventName</a>
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
+        </svg>
+      </button>
+      <div class="hidden md:flex space-x-8">
+        <a href="about.html" class="hover:text-yellow-400 transition-all duration-300">About</a>
+        <a href="tickets.html" class="hover:text-yellow-400 transition-all duration-300">Tickets</a>
+        <a href="schedule.html" class="hover:text-yellow-400 transition-all duration-300">Schedule</a>
+        <a href="media.html" class="text-yellow-400 font-medium">Media</a>
+        <a href="contact.html" class="hover:text-yellow-400 transition-all duration-300">Contact</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-black/95 p-4 absolute w-full left-0 backdrop-blur-sm transition-all duration-300">
+      <a href="about.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">About</a>
+      <a href="tickets.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">Tickets</a>
+      <a href="schedule.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">Schedule</a>
+      <a href="media.html" class="block py-3 text-yellow-400 font-medium">Media</a>
+      <a href="contact.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-[url('/img/hero-bg.jpg')] bg-cover bg-center text-white">
+    <div class="text-center">
+      <h1 class="text-5xl font-bold mb-4">STAY TUNED</h1>
+      <p class="text-xl mb-8">Coming Soon: The Ultimate Gaming + Afterparty Experience</p>
+      <!-- Countdown Timer -->
+      <div id="countdown" class="flex justify-center space-x-4">
+        <div class="text-center">
+          <span id="days" class="text-4xl font-bold">00</span>
+          <span class="block">Days</span>
+        </div>
+        <div class="text-center">
+          <span id="hours" class="text-4xl font-bold">00</span>
+          <span class="block">Hours</span>
+        </div>
+        <div class="text-center">
+          <span id="minutes" class="text-4xl font-bold">00</span>
+          <span class="block">Minutes</span>
+        </div>
+        <div class="text-center">
+          <span id="seconds" class="text-4xl font-bold">00</span>
+          <span class="block">Seconds</span>
+        </div>
+      </div>
+      <!-- CTA Buttons -->
+      <div class="mt-8 space-x-4">
+        <a href="tickets.html" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg">Buy Tickets</a>
+        <a href="about.html#game" class="bg-white hover:bg-gray-200 text-black font-bold py-3 px-6 rounded-lg">Join the Game</a>
+      </div>
+    </div>
+  </section>
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

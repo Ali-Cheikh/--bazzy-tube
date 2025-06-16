@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Tickets - Stay Tuned</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Remove duplicate Tailwind CSS link -->
+  <!-- Add loading="lazy" to any images you might add later -->
+</head>
+<body class="bg-gradient-to-b from-blue-500 to-gray-900 min-h-screen">
+  <!-- Navbar with improved styling -->
+  <nav class="bg-black/95 backdrop-blur-sm text-white p-4 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold hover:text-yellow-400 transition-all duration-300">EventName</a>
+      <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"/>
+        </svg>
+      </button>
+      <div class="hidden md:flex space-x-8">
+        <a href="about.html" class="hover:text-yellow-400 transition-all duration-300">About</a>
+        <a href="tickets.html" class="text-yellow-400 font-medium">Tickets</a>
+        <a href="schedule.html" class="hover:text-yellow-400 transition-all duration-300">Schedule</a>
+        <a href="media.html" class="hover:text-yellow-400 transition-all duration-300">Media</a>
+        <a href="contact.html" class="hover:text-yellow-400 transition-all duration-300">Contact</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-black/95 p-4 absolute w-full left-0 backdrop-blur-sm transition-all duration-300">
+      <a href="about.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">About</a>
+      <a href="tickets.html" class="block py-3 text-yellow-400 font-medium">Tickets</a>
+      <a href="schedule.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">Schedule</a>
+      <a href="media.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">Media</a>
+      <a href="contact.html" class="block py-3 hover:text-yellow-400 transition-all duration-300">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-8 max-w-3xl">
+    <h1 class="text-4xl font-bold mb-8 text-center text-gray-800">Get Your Tickets</h1>
+
+    <!-- Ticket Options Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold mb-2">Game Night Only</h3>
+        <p class="text-3xl font-bold text-yellow-500 mb-4">6 DT</p>
+        <ul class="mb-4 space-y-2">
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Access to all games</li>
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Tournament participation</li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold mb-2">Full Experience</h3>
+        <p class="text-3xl font-bold text-yellow-500 mb-4">46 DT</p>
+        <ul class="mb-4 space-y-2">
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>All Game Night features</li>
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Afterparty access</li>
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Exclusive merchandise</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Reservation Form -->
+    <section class="mb-12 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+      <h2 class="text-2xl font-bold mb-6">Reserve Your Ticket</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block mb-2 font-medium">Full Name</label>
+            <input type="text" id="name" name="name" required 
+                 class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition duration-300">
+          </div>
+          <div>
+            <label for="phone" class="block mb-2 font-medium">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required 
+                 class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition duration-300">
+          </div>
+        </div>
+        <div>
+          <label for="email" class="block mb-2 font-medium">Email</label>
+          <input type="email" id="email" name="email" required 
+               class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition duration-300">
+        </div>
+        <div>
+          <label for="ticket-type" class="block mb-2 font-medium">Ticket Type</label>
+          <select id="ticket-type" name="ticket-type" required 
+              class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition duration-300">
+            <option value="">Select your ticket</option>
+            <option value="game">Game Night Only (6 DT)</option>
+            <option value="full">Full Experience (46 DT)</option>
+          </select>
+        </div>
+        <button type="submit"
+            class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+          Reserve Now
+        </button>
+      </form>
+    </section>
+
+    <!-- Offline Purchase -->
+    <section class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+      <h2 class="text-2xl font-bold mb-4">Purchase Offline</h2>
+      <div class="space-y-4">
+        <h3 class="font-semibold">Available at:</h3>
+        <ul class="space-y-2">
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>Arigatou Store - Tunis</li>
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>Event Team Members</li>
+          <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>Partner Gaming Cafés</li>
+        </ul>
+        <p class="mt-4 text-sm text-gray-600 flex items-center">
+          <svg class="w-4 h-4 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Cash only for offline purchases
+        </p>
+      </div>
+    </section>
+  </main>
+
+      <script src="main.js"></script>
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
