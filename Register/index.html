@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form | LUDO REAL LIFE</title>
+    <link rel="shortcut icon" href="assets/images/Ali.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/images/Ali.png">
+    <meta name="author" content="Ali Cheikh">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="theme-color" content="#f8840f">
+
+    <meta name="title" content="LUDO REAL LIFE" />
+    <meta name="description"
+        content="16 Player Ludo is a strategy board game for two to four players| in which the real life one with 4 teams racing to the center from start to finish according to the rolls of a single die. Fun /Competitive /Betrayal /Challenge /Surprises /Action /Drama" />
+    <meta property="og:site_name" content="Join us in this event">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://LUDO_REAL _LIFE.tn" />
+    <meta property="og:title" content="LUDO REAL LIFE" />
+    <meta property="og:description"
+        content="16 Player Ludo is a strategy board game for two to four players| in which the real life one with 4 teams racing to the center from start to finish according to the rolls of a single die. Fun /Competitive /Betrayal /Challenge /Surprises /Action /Drama" />
+    <meta property="og:image" content="https://bazzy.onrender.com/assets/images/blog-1.png" />
+
+    <meta property="twitter:card" content="https://bazzy.onrender.com/assets/images/blog-1.png" />
+    <meta property="twitter:url" content="https://LUDO_REAL _LIFE.tn" />
+    <meta property="twitter:title" content="LUDO REAL LIFE" />
+    <meta property="twitter:description"
+        content="16 Player Ludo is a strategy board game for two to four players| in which the real life one with 4 teams racing to the center from start to finish according to the rolls of a single die. Fun /Competitive /Betrayal /Challenge /Surprises /Action /Drama" />
+    <meta property="twitter:image" content="https://bazzy.onrender.com/assets/images/blog-1.png" />
+
+    <link rel="stylesheet" href="assets/css/stylee.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .text {
+            text-transform: uppercase;
+            background-image: linear-gradient(to right, #f20000, #f79d00, #125aa7, #64f38c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300%;
+            background-position: -100%;
+            animation: animatedText 5s infinite alternate-reverse;
+        }
+
+        @keyframes animatedText {
+            to {
+                background-position: 100%;
+            }
+        }
+
+        body {
+            background: linear-gradient(135deg, #18181b 0%, #23272f 100%);
+        }
+
+        .dark-card {
+            background: #23272f;
+            color: #f3f4f6;
+        }
+
+        .dark-input {
+            background: #18181b;
+            color: #f3f4f6;
+            border-color: #374151;
+        }
+
+        .dark-input:focus {
+            border-color: #f8840f;
+            background: #23272f;
+        }
+
+        .dark-label {
+            color: #fbbf24;
+        }
+
+        .dark-btn {
+            background: linear-gradient(to right, #f8840f, #fbbf24);
+            color: #18181b;
+        }
+
+        .dark-btn:hover {
+            background: linear-gradient(to right, #fbbf24, #f8840f);
+        }
+
+        .dark-timer {
+            background: #18181b;
+            color: #fbbf24;
+        }
+
+        .dark-hr {
+            border-color: #374151;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center">
+    <!-- Logo -->
+    <img src="/assets/images/logo.png" alt="Event Title" class="w-80 mb-4">
+
+    <!-- Timer -->
+     <h4 class="text-white mb-8 bg-orange-400"><b>COUNT-DOWN</b></h4>
+    <div id="timer" class="flex flex-wrap justify-center gap-3 mb-6 text-center w-full max-w-xl">
+        <div id="days" class="flex-1 min-w-[70px] dark-timer rounded-lg shadow p-4 text-xl font-bold"></div>
+        <div id="hours" class="flex-1 min-w-[70px] dark-timer rounded-lg shadow p-4 text-xl font-bold"></div>
+        <div id="minutes" class="flex-1 min-w-[70px] dark-timer rounded-lg shadow p-4 text-xl font-bold"></div>
+        <div id="seconds" class="flex-1 min-w-[70px] dark-timer rounded-lg shadow p-4 text-xl font-bold"></div>
+    </div>
+
+    <!-- Registration Card -->
+    <div class="dark-card md:rounded-2xl shadow-2xl max-w-md w-full p-8 flex flex-col items-center">
+        <h2
+            class="text-3xl font-extrabold mb-6 text-gradient bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 bg-clip-text text-transparent uppercase">
+            Registration</h2>
+        <form id="registration-form" class="space-y-5 w-full">
+            <div>
+                <label for="name" class="block dark-label font-semibold mb-1">Full Name</label>
+                <input type="text" name="name" id="name" required pattern="[a-zA-Z\s]{2,50}" placeholder="Your Name"
+                    class="w-full px-4 py-2 dark-input border rounded-lg focus:ring-2 focus:ring-orange-400 outline-none" />
+            </div>
+            <div>
+                <label for="age" class="block dark-label font-semibold mb-1">Age</label>
+                <input type="number" name="age" id="age" required min="16" placeholder="16+"
+                    class="w-full px-4 py-2 dark-input border rounded-lg focus:ring-2 focus:ring-orange-400 outline-none" />
+            </div>
+            <div>
+                <label for="phone" class="block dark-label font-semibold mb-1">Phone Number</label>
+                <input type="tel" name="phone" id="phone" required placeholder="e.g. 12345678"
+                    class="w-full px-4 py-2 dark-input border rounded-lg focus:ring-2 focus:ring-orange-400 outline-none" />
+            </div>
+            <div>
+                <label for="payment-method" class="block dark-label font-semibold mb-1">Payment</label>
+                <select id="payment-method" name="payment_method" required
+                    class="w-full px-4 py-2 dark-input border rounded-lg focus:ring-2 focus:ring-orange-400 outline-none">
+                    <option value="on sight" selected>Pay the day of the event</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <span class="inline-block bg-yellow-900 text-yellow-300 font-bold px-4 py-2 rounded">Price: 13DT</span>
+            </div>
+            <button type="submit" class="w-full dark-btn font-bold py-2 rounded-lg shadow transition">Register</button>
+        </form>
+        <!-- Ticket Section -->
+        <div id="ticket-container" class="hidden mt-8 w-full">
+            <div id="ticket" class="bg-gray-900 rounded-lg p-4 flex flex-col items-center">
+                <div id="qr-code" class="mb-2"></div>
+                <div id="ticket-info" class="text-center">
+                    <h1 class="text-lg font-semibold text-gray-300">Holder</h1>
+                    <div id="ticket-name" class="text-green-300 font-bold"></div>
+                </div>
+            </div>
+            <button class="mt-4 w-full bg-yellow-400 text-black text-lg p-2 rounded hover:bg-yellow-500"
+                onclick="downloadTicket()">Download Ticket</button>
+            <hr class="my-4 dark-hr">
+            <h4 class="text-center text-gray-400">Make sure to have the ticket on your phone the day of the event</h4>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.getElementById('age').addEventListener('blur', function () {
+            var age = parseInt(this.value);
+            if (!isNaN(age) && age < 16) {
+                Swal.fire({
+                    imageUrl: "assets/images/logo.png",
+                    imageAlt: "Custom Warning Icon",
+                    title: 'Requires Parent Permission!',
+                    text: `You are under 16 years old. Are you sure you want to proceed?`,
+                    width: 600,
+                    padding: "3em",
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, Proceed',
+                    cancelButtonText: 'No, Cancel',
+                    allowOutsideClick: false,
+                    color: "white",
+                    background: "#262626",
+                    backdrop: "rgba(0,0,0,0.4)",
+                })
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            // Allow the form to be submitted
+                        } else {
+                            // Reload the page
+                            location.reload();
+                        }
+                    });
+            }
+        });
+
+        // Remove duplicate code in fetch error handling
+        document.getElementById('registration-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            Swal.fire({
+                icon: 'info',
+                title: 'Please wait...',
+                text: 'Sending your message',
+                willOpen: () => {
+                    Swal.showLoading();
+                },
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                background: "hsla(231, 10%, 14%, 1)"
+            });
+
+            const formData = new FormData(this);
+
+            fetch('https://script.google.com/macros/s/AKfycbxN9zEA2zvabVwnJevyaBPvddZa0NJt0Zvbhh7Ty7QWgYY_OtRBITeWSpNv0YS1REk/exec', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        Swal.fire({
+                            imageUrl: "assets/images/logo.png",
+                            imageAlt: "Custom Success Icon",
+                            title: 'Success!',
+                            html: `Your Registration is complete download the code <button class="bg-yellow-400 text-black-10 text-lg p-2 rounded" onclick="downloadTicket()">Download Ticket</button> your Ticket `,
+                            width: 600,
+                            padding: "3em",
+                            timer: 5000,
+                            timerProgressBar: true,
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            color: "white",
+                            background: "#262626",
+                            backdrop: "rgba(0,0,0,0.4)",
+                        });
+
+                        generateTicket(name, age, phone);
+                    } else {
+                        Swal.fire({
+                            imageUrl: "assets/images/logo.png",
+                            imageAlt: "Custom Success Icon",
+                            title: 'Success!',
+                            html: `Your Registration is complete download the code <button class="bg-yellow-400 text-black-10 text-lg p-2 rounded" onclick="downloadTicket()">Download Ticket</button> your Ticket `,
+                            width: 600,
+                            padding: "3em",
+                            timer: 5000,
+                            timerProgressBar: true,
+                            showConfirmButton: false,
+                            allowOutsideClick: false,
+                            color: "white",
+                            background: "#262626",
+                            backdrop: "rgba(0,0,0,0.4)",
+                        });
+                        generateTicket(name, age, phone);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error!', error);
+                    Swal.fire({
+                        imageUrl: "assets/images/logo.png",
+                        imageAlt: "Custom Success Icon",
+                        title: 'Success!',
+                        html: `Your Registration is complete download the code <button class="bg-yellow-400 text-black-10 text-lg p-2 rounded" onclick="downloadTicket()">Download Ticket</button> your Ticket `,
+                        width: 600,
+                        padding: "3em",
+                        timer: 5000,
+                        timerProgressBar: true,
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        color: "white",
+                        background: "#262626",
+                        backdrop: "rgba(0,0,0,0.4)",
+                    });
+                    generateTicket(name, age, phone);
+                });
+        });
+
+        function generateTicket(name, age, phone) {
+            const qrCodeContainer = document.getElementById('qr-code');
+            const ticketName = document.getElementById('ticket-name');
+            const ticketContainer = document.getElementById('ticket-container');
+
+            // Create a canvas element for the QR code
+            const canvas = document.createElement('canvas');
+            qrCodeContainer.innerHTML = ''; // Clear previous content
+            qrCodeContainer.appendChild(canvas); // Append canvas to qr-code container
+
+            // Generate QR code
+            QRCode.toCanvas(canvas, `Name: ${name}, Phone: ${phone}, Age: ${age}`, { width: 200 }, function (error) {
+                if (error) {
+                    console.error('QR Code Generation Error:', error);
+                    return;
+                }
+                console.log('QR code generated successfully!');
+            });
+
+            // Display ticket name
+            ticketName.innerHTML = `<span class='spaan' class="text-green-200 text-lg font-bold"><br>${name}</span>`;
+
+            // Show ticket container
+            ticketContainer.classList.remove('hidden');
+        }
+
+        function downloadTicket() {
+            html2canvas(document.getElementById('ticket')).then(function (canvas) {
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'ticket.png';
+                link.click();
+            });
+        }
+    </script>
+    <script>
+
+        function makeTimer() {
+
+            var endTime = new Date("September 08, 2025 15:30:00 GMT");
+            var endTime = (Date.parse(endTime)) / 1000;
+
+            var now = new Date();
+            var now = (Date.parse(now) / 1000);
+
+            var timeLeft = endTime - now;
+
+            var days = Math.floor(timeLeft / 86400);
+            var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+            var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+            var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+            if (hours < "10") { hours = "0" + hours; }
+            if (minutes < "10") { minutes = "0" + minutes; }
+            if (seconds < "10") { seconds = "0" + seconds; }
+
+            $("#days").html(days + "<span class='spaan px-2'>Days</span>");
+            $("#hours").html(hours + "<span class='spaan px-2'>Hours</span>");
+            $("#minutes").html(minutes + "<span class='spaan px-2'>Minutes</span>");
+            $("#seconds").html(seconds + "<span class='spaan px-2'>Seconds</span>")
+
+        }
+
+        setInterval(function () { makeTimer(); }, 1000);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</body>
+
+</html>
