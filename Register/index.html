@@ -36,6 +36,9 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
         .text {
             text-transform: uppercase;
             background-image: linear-gradient(to right, #f20000, #f79d00, #125aa7, #64f38c);
@@ -98,11 +101,12 @@
 </head>
 
 <body class="min-h-screen flex flex-col items-center justify-center">
+
     <!-- Logo -->
-    <img src="/assets/images/logo.png" alt="Event Title" class="w-80 mb-4">
+    <img src="/assets/images/logo.png" alt="Event Title" class="w-80 mb-4 py-16 md-8">
 
     <!-- Timer -->
-     <h4 class="text-white mb-8 bg-orange-400"><b>COUNT-DOWN</b></h4>
+     <h4 class="text-white mb-8 bg-orange-400" id="register"><b>COUNT-DOWN</b></h4>
     <div id="timer" class="flex flex-wrap justify-center gap-3 mb-6 text-center w-full max-w-xl">
         <div id="days" class="flex-1 min-w-[70px] dark-timer rounded-lg shadow p-4 text-xl font-bold"></div>
         <div id="hours" class="flex-1 min-w-[70px] dark-timer rounded-lg shadow p-4 text-xl font-bold"></div>
@@ -141,7 +145,7 @@
             <div class="text-center">
                 <span class="inline-block bg-yellow-900 text-yellow-300 font-bold px-4 py-2 rounded">Price: 13DT</span>
             </div>
-            <button type="submit" class="w-full dark-btn font-bold py-2 rounded-lg shadow transition">Register</button>
+            <button type="submit" class="w-full dark-btn font-bold py-2 rounded-lg shadow transition">Attend!!</button>
         </form>
         <!-- Ticket Section -->
         <div id="ticket-container" class="hidden mt-8 w-full">
@@ -159,8 +163,125 @@
         </div>
     </div>
 
-    
+    <!-- Hitman Card Game – Real Life Experience Section -->
+    <section class="w-full max-w-3xl mx-auto mt-16 mb-12 px-4">
+        <!-- Title & Subtitle -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gradient text mb-2">Hitman Card Game – Real Life Experience</h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-200 mb-4">13 Players. 1 Winner. Total Chaos.</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mt-4">
+                <a href="#register" class="dark-btn font-bold py-2 px-6 rounded-lg shadow transition text-lg">Book the Game</a>
+                <a href="#get-kit" class="dark-btn font-bold py-2 px-6 rounded-lg shadow transition text-lg">Get the Game Kit</a>
+            </div>
+        </div>
 
+        <!-- Promo Video Section -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4 text-center">What Is Hitman Card?</h3>
+            <div class="flex justify-center mb-4">
+                <!-- Replace the src with your YouTube video link -->
+                <iframe class="rounded-lg shadow-lg" width="360" height="215" src="https://www.youtube.com/embed/INSERT_VIDEO_ID" title="Hitman Card Game Trailer" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p class="text-center text-gray-300 mb-2">Step into a live-action world of tension, bluffing, and survival.<br>
+                Watch the trailer and feel the chaos unfold.</p>
+        </div>
+
+        <!-- Event Description Section -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">The Game That Turns Friends Into Hitmen</h3>
+            <p class="text-gray-200 mb-2">
+                The Hitman Card Game isn’t just a party game — it’s a full-scale experience.<br>
+                Each player receives secret cards, hidden roles, and dangerous objectives.<br>
+                Alliances form. Trust breaks. Only one survives.
+            </p>
+            <p class="text-gray-400 mb-2">
+                Whether you're playing with 8 or 13 people, the pressure is real.<br>
+                Strategic moves, bluffing, and betrayal decide your fate.<br>
+                Do you take the shot — or get eliminated?
+            </p>
+            <p class="text-gray-300 font-semibold">
+                Welcome to the most suspenseful social game ever created.
+            </p>
+        </div>
+
+        <!-- Game Tags Section -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Vibe Check</h3>
+            <div class="flex flex-wrap gap-2 justify-center">
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Fun</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Competitive</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Betrayal</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Challenge</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Suspense</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Drama</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Action</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Chaos</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Strategy</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Survival</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Mind Games</span>
+                <span class="bg-yellow-900 text-yellow-300 px-3 py-1 rounded-full font-semibold text-sm">Deception</span>
+            </div>
+        </div>
+
+        <!-- What's Included Section -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">What You Get</h3>
+            <ul class="list-disc list-inside text-gray-200 space-y-2">
+                <li><b>Printable Game Cards (PDF)</b> – Full set of roles, powers, and effects</li>
+                <li><b>Game Rule Sheet</b> – Easy-to-follow instructions for smooth hosting</li>
+                <li><b>Bonus Sound Pack (optional)</b> – Audio effects to build tension</li>
+                <li><b>Event Poster Template</b> – Editable design for promoting your game</li>
+                <li><b>1-Time Event License</b> – Legal right to host and play the game once</li>
+            </ul>
+            <p class="text-gray-400 mt-2">Perfect for clubs, parties, team-building, and private events.</p>
+        </div>
+
+        <!-- What Makes It Unique Section -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Why It’s Different</h3>
+            <p class="text-gray-200 mb-2">
+                Hitman Card Game isn’t copied — it’s crafted.<br>
+                While it shares the thrill of other games, this one is built from the ground up:
+            </p>
+            <ul class="list-disc list-inside text-gray-200 space-y-1">
+                <li>Custom cards with original powers and mechanics</li>
+                <li>Designed for live, immersive events, not just tabletop sessions</li>
+                <li>Blends strategy, storytelling, and suspense into one unforgettable night</li>
+                <li>Battle-tested with 13 players and full crowd reactions</li>
+            </ul>
+            <p class="text-gray-300 mt-2 font-semibold">You won’t find another game like it.</p>
+        </div>
+
+        <!-- Gallery + Testimonials Section -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Real Moments From Real Games</h3>
+            <!-- Replace with your event night gallery images -->
+            <div class="flex flex-wrap gap-4 justify-center mb-4">
+                <img src="https://cdn.discordapp.com/attachments/1394102997608435874/1397709251182592051/5.png?ex=6882b5ad&is=6881642d&hm=53f17477b3311dfd10e0033dc228c1dc39a0e66e5f3226981e1c0b755e70c631&" alt="Event Photo 1" class="w-40 h-28 object-cover rounded shadow">
+                <img src="https://cdn.discordapp.com/attachments/1394102997608435874/1397709252335763577/3.png?ex=6882b5ad&is=6881642d&hm=2b8b39e52631a156623fe6d236c978a69aec063cf8b2cf9acfe9a209e899767a&" alt="Event Photo 3" class="w-40 h-28 object-cover rounded shadow">
+                <img src="https://cdn.discordapp.com/attachments/1394102997608435874/1397709251752886382/1.png?ex=6882b5ad&is=6881642d&hm=e61141d8a8877e30a24722d2bbcba93e8c88a81cacddd00c69bc0afb5a67e1c4&" alt="Event Photo 2" class="w-40 h-28 object-cover rounded shadow">
+            </div>
+            <div class="text-center text-gray-400 italic space-y-1">
+                <p>“This was INSANE. I was sweating by round 2.” – Player</p>
+                <p>“I trusted no one. That’s how you know it’s a good game.”</p>
+                <p>“Bazzy you’re a genius for this.”</p>
+            </div>
+        </div>
+
+        <!-- Pricing & Licensing Section -->
+        <div id="get-kit" class="mb-12">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-4">Get the Game</h3>
+            <div class="bg-yellow-900 text-yellow-200 rounded-lg p-6 shadow-lg max-w-md mx-auto">
+                <h4 class="text-xl font-bold mb-2">Package 1 – Personal Event Use:</h4>
+                <div class="text-3xl font-extrabold mb-2">75 TND</div>
+                <ul class="list-disc list-inside mb-2">
+                    <li>Includes full kit + license for 1 event</li>
+                    <li>Great for birthday parties, hangouts, private events</li>
+                </ul>
+                <a href="#register" class="dark-btn font-bold py-2 px-6 rounded-lg shadow transition text-lg mt-2 inline-block">Book Now</a>
+            </div>
+        </div>
+    </section>
     <script>
         document.getElementById('age').addEventListener('blur', function () {
             var age = parseInt(this.value);
