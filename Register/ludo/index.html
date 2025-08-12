@@ -145,7 +145,28 @@
     }
     .schedule-desc {
       flex: 1;
+      text-align: end;
     }
+    .schedule-item {
+      transition: 
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        text-shadow 0.2s ease;
+      margin: 1rem 0;
+      padding: 15px;
+    }
+
+    .schedule-item:hover {
+      text-shadow: 
+        0 0 6px rgba(255, 0, 102, 0.8), 
+        0 0 12px rgba(255, 0, 149, 0.6), 
+        0 0 20px rgba(255, 0, 149, 0.4);
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
     .form-success {
       display: none;
       background: rgba(0, 200, 100, 0.2);
@@ -189,7 +210,7 @@
   <section class="hero text-center min-h-screen flex flex-col justify-center items-center">
     <div class="max-w-2xl px-4">
       <h2 class="text-5xl md:text-6xl font-extrabold glow-text mb-6 leading-tight">Join the Ultimate LUDO Real Life Game!</h2>
-      <p class="text-xl text-gray-300 mb-8">20 August 2025 • 4 PM - 8 PM • Central Park</p>
+      <p class="text-xl text-gray-300 mb-8">20 August 2025 • 4 PM - 6 PM <br> J Space | Coworking Space</p>
       <a href="#register" class="btn-glow inline-block">Register Now</a>
     </div>
   </section>
@@ -200,10 +221,10 @@
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div>
         <p class="text-gray-300 mb-4">
-          oin the ultimate outdoor LUDO challenge on <strong>20 August 2025</strong>!<br>
+          Join the ultimate outdoor LUDO challenge on <strong>20 August 2025</strong>!<br>
         Only 20 players will enter – real dice, real game board, real fun. Register now and let the games begin!</p>
-        
-        </p>
+        <h3 class="text-6xl">💵 = 10 TND</h3>
+        <p class="text-gray-300 mb-4">huge thanks to the host</p><img src="https://cdn.discordapp.com/attachments/739578964883931167/1404778491408551936/517564677_122150074022786911_2419038240600890776_n-1.png?ex=689c6d6b&is=689b1beb&hm=e2779350d933c592df5c38f0d0951022a8b099f05ce122b2331ddaca62081e3f&" alt="J Space | Coworking Place">
       </div>
       <div class="bg-black/40 p-4 rounded-lg border border-gray-800">
         <img src="/assets/images/ludologo.png" 
@@ -214,39 +235,36 @@
   </section>
 
   <!-- Schedule -->
-  <section id="schedule" class="opacity-0 translate-y-8 transition-all  duration-700">
-    <h3 class="text-3xl font-bold glow-text mb-6">Event Schedule</h3>
-    <div class="max-w-2xl">
-      <div class="schedule-item">
-        <div class="schedule-time">4:00 PM</div>
-        <div class="schedule-desc">Arrival & Check-In</div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">4:30 PM</div>
-        <div class="schedule-desc">Rules Explanation & Team Formation</div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">5:00 PM</div>
-        <div class="schedule-desc">LUDO Real Life Match 1 (First Round)</div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">6:00 PM</div>
-        <div class="schedule-desc">Break & Snacks (Provided)</div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">6:30 PM</div>
-        <div class="schedule-desc">LUDO Real Life Match 2 (Championship Round)</div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">7:30 PM</div>
-        <div class="schedule-desc">Award Ceremony & Photos</div>
-      </div>
-      <div class="schedule-item">
-        <div class="schedule-time">8:00 PM</div>
-        <div class="schedule-desc">Event Ends</div>
-      </div>
+<section id="schedule" class="opacity-0 translate-y-8 transition-all duration-700 flex flex-col items-center justify-center text-center">
+  <h3 class="text-3xl font-bold glow-text mb-6">Event Schedule</h3>
+  <div class="max-w-2xl w-full">
+    <div class="schedule-item">
+      <div class="schedule-time">4:00 PM</div>
+      <div class="schedule-desc">Arrival & Check-In</div>
     </div>
-  </section>
+    <div class="schedule-item">
+      <div class="schedule-time">4:30 PM</div>
+      <div class="schedule-desc">Rules Explanation & Team Formation</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">5:00 PM</div>
+      <div class="schedule-desc">LUDO Real Life Match 1 (First Round)</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">6:00 PM</div>
+      <div class="schedule-desc">LUDO Real Life Match 2 (Second Round)</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">6:30 PM</div>
+      <div class="schedule-desc">LUDO Real Life Match 3 (Third Round)</div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-time">7:30 PM</div>
+      <div class="schedule-desc">Award Ceremony & Photos</div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Register -->
   <section id="register" class="opacity-0 translate-y-8 transition-all duration-700">
