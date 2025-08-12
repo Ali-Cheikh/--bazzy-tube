@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="images/dots.png" type="image/x-icon">
+  <title>Mohamed Amine Ben Taher - Video Creator</title>
+  <meta name="title" content="Mohamed Amine Ben Taher - Video Creator" />
+  <meta name="description"
+    content="Join the ultimate outdoor LUDO challenge on 20 August 2025! Only 20 players will enter – real dice, real game board, real fun. Register now and let the games begin!" />
+  <meta name="author" content="Ali Cheikh">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#f8840f">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="Ali Cheikh" />
+  <meta property="og:title" content="Mohamed Amine Ben Taher - Video Creator" />
+  <meta property="og:description"
+    content="Join the ultimate outdoor LUDO challenge on 20 August 2025! Only 20 players will enter – real dice, real game board, real fun. Register now and let the games begin!" />
+  <meta property="og:image" content="/assets/images/ludologo.png" />
+
+  <meta property="twitter:card" content="/assets/images/ludologo.png" />
+  <meta property="twitter:url" content="https://bazzy.onrender.com/" />
+  <meta property="twitter:title" content="Mohamed Amine Ben Taher - Video Creator" />
+  <meta property="twitter:description"
+    content="Hi, I’m Mohamed Amine Ben Taher and I am creative Video Creator who dream's of making the world laugh by creating captivating funny videos." />
+  <meta property="twitter:image"
+    content="https://cdn.discordapp.com/attachments/739578964883931167/1248783136049991811/aIMqrIm.png?ex=6664eb6c&is=666399ec&hm=19e3b8c144f8d6a42ff7e8f391bbf201637f64674461073901c16f6765013389&" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --primary: #ff0066;
+      --secondary: #ffcc00;
+    }
+    body {
+      background-color: #0b0f1a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glow-text {
+      text-shadow: 0 0 8px rgba(255, 0, 100, 0.8), 0 0 16px rgba(255, 0, 150, 0.6);
+    }
+    .form-container label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+      width: 100%;
+      padding: 0.75rem;
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .form-container input:focus,
+    .form-container select:focus,
+    .form-container textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(255, 0, 100, 0.3);
+    }
+    .form-container input[type="radio"],
+    .form-container input[type="checkbox"] {
+      width: auto;
+      margin-right: 0.5rem;
+      accent-color: var(--primary);
+    }
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .btn-glow {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: black;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--primary), 0 0 20px var(--secondary);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--primary), 0 0 30px var(--secondary);
+    }
+    .btn-glow:active {
+      transform: translateY(0);
+    }
+    section {
+      padding: 6rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .nav-link {
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(rgba(11, 15, 26, 0.7), rgba(11, 15, 26, 0.9)), 
+                  url('/assets/images/ludo.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .schedule-item {
+      display: flex;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #374151;
+    }
+    .schedule-time {
+      font-weight: 600;
+      color: var(--secondary);
+      min-width: 120px;
+    }
+    .schedule-desc {
+      flex: 1;
+    }
+    .form-success {
+      display: none;
+      background: rgba(0, 200, 100, 0.2);
+      border: 1px solid rgba(0, 200, 100, 0.5);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 1rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .schedule-item {
+        flex-direction: column;
+      }
+      .schedule-time {
+        margin-bottom: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="fixed w-full bg-black/80 backdrop-blur z-50">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4 px-6">
+      <h1 class="text-2xl font-bold glow-text">LUDO Real Life</h1>
+      <div class="flex space-x-6">
+        <a href="#about" class="nav-link hover:text-pink-400">About</a>
+        <a href="#schedule" class="nav-link hover:text-pink-400">Schedule</a>
+        <a href="#register" class="nav-link hover:text-pink-400">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero text-center min-h-screen flex flex-col justify-center items-center">
+    <div class="max-w-2xl px-4">
+      <h2 class="text-5xl md:text-6xl font-extrabold glow-text mb-6 leading-tight">Join the Ultimate LUDO Real Life Game!</h2>
+      <p class="text-xl text-gray-300 mb-8">20 August 2025 • 4 PM - 8 PM • Central Park</p>
+      <a href="#register" class="btn-glow inline-block">Register Now</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="opacity-0 translate-y-8 transition-all duration-700">
+    <h3 class="text-3xl font-bold glow-text mb-6">About the Event</h3>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <p class="text-gray-300 mb-4">
+          oin the ultimate outdoor LUDO challenge on <strong>20 August 2025</strong>!<br>
+        Only 20 players will enter – real dice, real game board, real fun. Register now and let the games begin!</p>
+        
+        </p>
+      </div>
+      <div class="bg-black/40 p-4 rounded-lg border border-gray-800">
+        <img src="/assets/images/ludologo.png" 
+             alt="People playing board game" 
+             class="rounded-lg w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" class="opacity-0 translate-y-8 transition-all  duration-700">
+    <h3 class="text-3xl font-bold glow-text mb-6">Event Schedule</h3>
+    <div class="max-w-2xl">
+      <div class="schedule-item">
+        <div class="schedule-time">4:00 PM</div>
+        <div class="schedule-desc">Arrival & Check-In</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">4:30 PM</div>
+        <div class="schedule-desc">Rules Explanation & Team Formation</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">5:00 PM</div>
+        <div class="schedule-desc">LUDO Real Life Match 1 (First Round)</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">6:00 PM</div>
+        <div class="schedule-desc">Break & Snacks (Provided)</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">6:30 PM</div>
+        <div class="schedule-desc">LUDO Real Life Match 2 (Championship Round)</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">7:30 PM</div>
+        <div class="schedule-desc">Award Ceremony & Photos</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">8:00 PM</div>
+        <div class="schedule-desc">Event Ends</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register -->
+  <section id="register" class="opacity-0 translate-y-8 transition-all duration-700">
+    <h3 class="text-3xl font-bold glow-text mb-6">Register Now</h3>
+<div id="formSuccess" class="hidden bg-opacity-20 border rounded-lg p-4 mb-6">
+  <!-- Messages will be inserted here by JavaScript -->
+</div>
+    <form class="form-container bg-black/40 p-8 rounded-lg border border-gray-800" id="registrationForm">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="fullname">Full Name *</label>
+          <input type="text" id="fullname" name="fullname" required placeholder="Your full name">
+        </div>
+        <div>
+          <label for="age">Age *</label>
+          <input type="number" id="age" name="age" min="13" max="99" required placeholder="Your age">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+216 12 345 678">
+        </div>
+        <div>
+          <label for="email">Email (optional)</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com">
+        </div>
+      </div>
+
+      <div>
+        <label>Will you be available on 20 August 2025 from 4 PM to 8 PM? *</label>
+        <div class="radio-group">
+          <div class="flex items-center">
+            <input type="radio" id="availableYes" name="availability" value="yes" required>
+            <label for="availableYes" class="ml-2">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" id="availableNo" name="availability" value="no">
+            <label for="availableNo" class="ml-2">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="team">Team Name (if registering with friends)</label>
+        <input type="text" id="team" name="team" placeholder="Your team name (optional)">
+      </div>
+
+      <div>
+        <label>Preferred Pawn Color</label>
+        <select name="color" class="appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGV2cm9uLWRvd24iPjxwYXRoIGQ9Im03IDEwIDUgNSA1LTUiLz48L3N2Zz4=')] bg-no-repeat bg-[center_right_1rem]">
+          <option value="">Choose one (not guaranteed)</option>
+          <option value="red">🔴 Red</option>
+          <option value="green">🟢 Green</option>
+          <option value="blue">🔵 Blue</option>
+          <option value="yellow">🟡 Yellow</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Do you agree to be filmed/photographed during the event? *</label>
+        <div class="radio-group">
+          <div class="flex items-center">
+            <input type="radio" id="mediaYes" name="media" value="yes" required>
+            <label for="mediaYes" class="ml-2">Yes</label>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" id="mediaNo" name="media" value="no">
+            <label for="mediaNo" class="ml-2">No</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label for="notes">Any special requirements or questions?</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Let us know if you have any special needs or questions"></textarea>
+      </div>
+
+      <div class="checkbox-group">
+        <div class="flex items-start">
+          <input type="checkbox" id="confirm" name="confirm" required class="mt-1">
+          <label for="confirm" class="ml-2">I confirm my participation and agree to follow the event rules. I understand that photos/videos may be used for promotional purposes.</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-glow w-full py-3 text-lg mt-4">Submit Registration</button>
+    </form>
+  </section>
+
+
+  <!-- JS -->
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Update active nav link
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+          navLink.classList.remove('text-pink-400');
+        });
+        this.classList.add('text-pink-400');
+      });
+    });
+
+    // Form handling
+    const form = document.getElementById('registrationForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // start alert in the place of the form saying that the data is submitting
+  formSuccess.classList.remove('hidden');
+  form.classList.add('hidden');
+  formSuccess.innerHTML = '<h2 class="text-yellow-500 border border-yellow-500 animate-pulse">Submitting your registration...</h2>';
+  // Get form data
+  const formData = new FormData(e.target);
+  const params = new URLSearchParams(formData);
+  
+  // Add JSONP callback parameter
+  params.append('callback', 'handleResponse');
+  
+  // Create script element for JSONP
+  const script = document.createElement('script');
+  script.src = 'https://script.google.com/macros/s/AKfycbx6n0qM9S7x0GrThdXOQmyvkVDovHhu19szmdk3xqMIYZUg3kNDcztZyqNc4j9YVKFk/exec?' + params.toString();
+
+  // Add callback handler
+  window.handleResponse = function(data) {
+    // Remove script after execution
+    document.body.removeChild(script);
+    delete window.handleResponse;
+    
+    // Handle response
+    if (data.status === 'success') {
+      e.target.reset();
+      formSuccess.innerHTML = '<h2 class="text-green-500">Registration successful!</h2>';
+    } else {
+      formSuccess.innerHTML = '<h2 class="text-red-500">Error: ' + data.message + '</h2>';
+      form.classList.remove('hidden');
+    }
+  };
+  
+  // Add script to document to execute the request
+  document.body.appendChild(script);
+});
+
+// Fade-in animation on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      observer.observe(section);
+    });
+    // Fade-in animation for sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
